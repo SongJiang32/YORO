@@ -1,6 +1,8 @@
 # YORO
 You Only Run Once
 
+## Change source & install ROS/ROS2
 $ wget http://fishros.com/install -O fishros && . fishros
 
-$ ./install_for_${ROS_DISTRO}.sh
+## One-click install
+$ ./yoro.sh

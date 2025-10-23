@@ -1,6 +1,11 @@
 #!/bin/bash
 
-ROS_DISTRO="humble"  # 只需要修改这里的 ROS 版本
+# 自动获取当前ROS版本
+if [ -z "$ROS_DISTRO" ]; then
+    ROS_DISTRO=$(rosversion -d)
+fi
+
+echo "Your ROS/ROS2 version: $ROS_DISTRO"
 
 # 更新和升级
 sudo apt update

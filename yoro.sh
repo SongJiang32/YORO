@@ -13,8 +13,8 @@ sudo apt list --upgradable
 sudo apt upgrade -y 
 
 # 添加源
+# wget https://fishros.com/install -O fishros && . fishros    # 换源&装ROS
 # sudo add-apt-repository ppa:obsproject/obs-studio # 用于安装OBS
-# wget https://fishros.com/install -O fishros && . fishros
 
 # 安装 ROS 相关软件包
 sudo apt install -y ros-${ROS_DISTRO}-desktop-full

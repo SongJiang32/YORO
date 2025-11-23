@@ -14,5 +14,6 @@ wget http://fishros.com/install -O fishros && . fishros
 ### Install
 
 ```
+sudo chmod +x yoro.sh
 ./yoro.sh
 ```

@@ -10,6 +10,7 @@ Please change source and install ROS/ROS2 first.
 ```
 wget http://fishros.com/install -O fishros && . fishros
 ```
+输入5更换系统源，输入13更换python源
 
 ### Install
 

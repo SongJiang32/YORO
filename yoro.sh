@@ -101,7 +101,6 @@ sudo apt install -y vlc
 sudo apt install -y vim
 sudo apt install -y wine
 sudo apt install -y git
-sudo apt install -y gdm3 lightdm
 
 # 更新和升级
 sudo apt update

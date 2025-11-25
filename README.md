@@ -1,4 +1,4 @@
-# YORO
+# 装机必备
 You Only Run Once
 
 ## System

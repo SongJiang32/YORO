@@ -1,9 +1,7 @@
 # 装机必备
 You Only Run Once
 
-## System
-
-### Dependency
+## Source
 
 Please change source and install ROS/ROS2 first.
 
@@ -12,7 +10,7 @@ wget http://fishros.com/install -O fishros && . fishros
 ```
 输入5更换系统源，输入13更换python源
 
-### Install
+## Install
 
 ```
 sudo chmod +x yoro.sh
@@ -22,20 +20,17 @@ sudo chmod +x yoro.sh
 # 安装NVIDIA显卡驱动
 
 1.权限提升和硬件检测
-'''
+```
 sudo -i
 lspci |grep -i nvidia
-'''
+```
 
 2.备份和准备软件源
+```
 cd /etc/apt/
-
 ls
-
 cd sources.list.d/
-
 ls
-
 mkdir ../bak
 
 mv ./* ../bak/
@@ -45,16 +40,18 @@ apt update
 apt install nvidia-driver-575-open -y
 
 apt install gdm3 lightdm -y
+```
 
 选择lightdm
 
-'''
+```
 reboot
-'''
+```
 
-'''
+查看显卡驱动是否安装成功
+```
 nvidia-smi
-'''
+```
 
 # 安装CUDA
 

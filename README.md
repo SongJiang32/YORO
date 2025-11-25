@@ -17,7 +17,7 @@ sudo chmod +x yoro.sh
 ./yoro.sh
 ```
 
-# 安装NVIDIA显卡驱动
+## 安装NVIDIA显卡驱动
 
 1.权限提升和硬件检测
 ```
@@ -28,32 +28,33 @@ lspci |grep -i nvidia
 2.备份和准备软件源
 ```
 cd /etc/apt/
-ls
 cd sources.list.d/
-ls
 mkdir ../bak
-
 mv ./* ../bak/
-
+```
+3.安装驱动
+```
 apt update
-
 apt install nvidia-driver-575-open -y
-
-apt install gdm3 lightdm -y
 ```
 
-选择lightdm
+4.安装显示管理器
+```
+apt install gdm3 lightdm -y
+```
+选择跟显卡驱动兼容的lightdm，如果选择gdm3可能会导致黑屏bug问题
 
+5.让新安装的显卡驱动生效
 ```
 reboot
 ```
 
-查看显卡驱动是否安装成功
+6.查看显卡驱动是否安装成功
 ```
 nvidia-smi
 ```
 
-# 安装CUDA
+## 安装CUDA
 
 打开网址https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html查看适用当前NVIDIA DRIVER的CUDA版本
 
@@ -81,7 +82,7 @@ nvcc -V
 
 
 
-# 安装cuDNN
+## 安装cuDNN
 
 打开网址https://developer.nvidia.cn/rdp/cudnn-archive查看适用当前CUDA的cuDNN版本
 
@@ -100,7 +101,7 @@ cat /usr/local/cuda/include/cudnn
 cat /usr/local/cuda/include/cudnn_version.h
 '''
 
-# 安装Miniconda3
+## 安装Miniconda3
 
 '''
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -121,7 +122,7 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 输入yes初始化
 '''
 
-# 安装Isaac Sim
+## 安装Isaac Sim
 从 Isaac Sim 4.0 发布开始，可以使用 pip 安装 Isaac Sim，推荐Ubuntu22.04及以上执行
 
 对于Isaac Sim 5.X，所需的Python版本为3.11
@@ -150,7 +151,7 @@ pip3 install torch torchvision
 isaacsim
 '''
 
-# 安装Isaac Lab
+## 安装Isaac Lab
 
 '''
 sudo apt install cmake build-essential

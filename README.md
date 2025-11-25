@@ -57,7 +57,7 @@ nvidia-smi
 
 ## 安装CUDA
 
-[打开网址](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)查看适用当前NVIDIA DRIVER的CUDA版本
+[查看适用当前NVIDIA显卡驱动的CUDA版本](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
 '''
 wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run

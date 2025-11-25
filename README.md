@@ -22,12 +22,14 @@ sudo chmod +x yoro.sh
 ## 安装NVIDIA显卡驱动
 
 1.权限提升和硬件检测
+
 ```
 sudo -i
 lspci |grep -i nvidia
 ```
 
 2.备份和准备软件源
+
 ```
 cd /etc/apt/
 cd sources.list.d/
@@ -35,23 +37,28 @@ mkdir ../bak
 mv ./* ../bak/
 ```
 3.安装驱动
+
 ```
 apt update
 apt install nvidia-driver-575-open -y
 ```
 
 4.安装显示管理器
+
 ```
 apt install gdm3 lightdm -y
 ```
+
 选择跟显卡驱动兼容的lightdm，如果选择gdm3可能会导致黑屏bug问题
 
 5.让新安装的显卡驱动生效
+
 ```
 reboot
 ```
 
 6.查看显卡驱动是否安装成功
+
 ```
 nvidia-smi
 ```
@@ -61,11 +68,13 @@ nvidia-smi
 [查看适用当前NVIDIA显卡驱动的CUDA版本](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
 下载对应的CUDA
+
 ```
 wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run
 ```
 
 安装CUDA
+
 ```
 sudo chmod 775 ./cuda_12.8.0_570.86.10_linux.run
 sudo ./cuda_12.8.0_570.86.10_linux.run
@@ -80,6 +89,7 @@ sudo ./cuda_12.8.0_570.86.10_linux.run
 > Install
 
 环境声明
+
 ```
 echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
@@ -88,6 +98,7 @@ source ~/.bashrc
 ```
 
 查看CUDA安装是否成功
+
 ```
 nvcc -V
 ```
@@ -99,6 +110,7 @@ nvcc -V
 [下载对应的cuDNN]https://developer.download.nvidia.cn/compute/cudnn/redist/cudnn/linux-x86_64/
 
 解压并安装
+
 ```
 tar -xvf cudnn-linux-x86_64-9.14.0.64_cuda12-archive.tar.xz
 cd cudnn-linux-x86_64-9.14.0.64_cuda12-archive
@@ -108,6 +120,7 @@ sudo mv ./lib/* /usr/local/cuda/lib64/
 ```
 
 查看cuDNN库是否安装成功
+
 '''
 cat /usr/local/cuda/include/cudnn
 cat /usr/local/cuda/include/cudnn_version.h
@@ -116,6 +129,7 @@ cat /usr/local/cuda/include/cudnn_version.h
 ## 安装Miniconda
 
 下载
+
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ```
@@ -143,6 +157,8 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 
 对于Isaac Sim 4.X，所需的Python版本为3.10
 
+以下为安装Isaac Sim 5.X方法
+
 ```
 conda create -n py311 python=3.11
 conda activate py311
@@ -169,14 +185,22 @@ isaacsim
 
 ## 安装Isaac Lab
 
-'''
+下载
+
+```
 sudo apt install cmake build-essential
 git clone https://github.com/isaac-sim/IsaacLab.git
+```
+
+安装
+
+```
 cd IsaacLab
 ./isaaclab.sh --install
-'''
+```
 
 打开一个空世界验证安装
-'''
+
+```
 ./isaaclab.sh -p scripts/tutorials/00_sim/create_empty.py
-'''
+```

@@ -9,6 +9,7 @@ Please change source and install ROS/ROS2 first.
 ```
 wget http://fishros.com/install -O fishros && . fishros
 ```
+
 输入5更换系统源，输入13更换python源
 
 ## Install
@@ -59,98 +60,112 @@ nvidia-smi
 
 [查看适用当前NVIDIA显卡驱动的CUDA版本](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
-'''
+下载对应的CUDA
+```
 wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run
-'''
+```
 
-'''
+安装CUDA
+```
 sudo chmod 775 ./cuda_12.8.0_570.86.10_linux.run
 sudo ./cuda_12.8.0_570.86.10_linux.run
-'''
+```
 
-选择Continue
-输入accept
-空格取消[] Driver
-Install
+> 选择Continue
+> 
+> 输入accept
+>
+> 空格取消[ ] Driver
+> 
+> Install
 
-'''
+环境声明
+```
 echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 echo 'export PATH=$CUDA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
+```
+
+查看CUDA安装是否成功
+```
 nvcc -V
-'''
-
-
+```
 
 ## 安装cuDNN
 
-打开网址https://developer.nvidia.cn/rdp/cudnn-archive查看适用当前CUDA的cuDNN版本
+[查看适用当前CUDA的cuDNN版本]https://developer.nvidia.cn/rdp/cudnn-archive
 
-打开网址https://developer.download.nvidia.cn/compute/cudnn/redist/cudnn/linux-x86_64/下载cuDNN
+[下载对应的cuDNN]https://developer.download.nvidia.cn/compute/cudnn/redist/cudnn/linux-x86_64/
 
-'''
+解压并安装
+```
 tar -xvf cudnn-linux-x86_64-9.14.0.64_cuda12-archive.tar.xz
 cd cudnn-linux-x86_64-9.14.0.64_cuda12-archive
 chmod -R 775 -/*
 sudo mv ./include/* /usr/local/cuda/include/
 sudo mv ./lib/* /usr/local/cuda/lib64/
-'''
+```
 
+查看cuDNN库是否安装成功
 '''
 cat /usr/local/cuda/include/cudnn
 cat /usr/local/cuda/include/cudnn_version.h
 '''
 
-## 安装Miniconda3
+## 安装Miniconda
 
-'''
+下载
+```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-'''
+```
 
-'''
+安装
+
+```
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh
-'''
+```
 
-'''
-按Enter阅读许可协议
-
-输入yes同意协议
-
-选择安装位置（默认即可）
-
-输入yes初始化
-'''
+> 按Enter阅读许可协议
+>
+> 输入yes同意协议
+>
+> 选择安装位置（默认即可）
+>
+>输入yes初始化
 
 ## 安装Isaac Sim
-从 Isaac Sim 4.0 发布开始，可以使用 pip 安装 Isaac Sim，推荐Ubuntu22.04及以上执行
+
+从Isaac Sim 4.0发布开始，可以使用pip安装Isaac Sim，推荐Ubuntu22.04及以上执行
 
 对于Isaac Sim 5.X，所需的Python版本为3.11
 
 对于Isaac Sim 4.X，所需的Python版本为3.10
 
-'''
+```
 conda create -n py311 python=3.11
 conda activate py311
 pip install --upgrade pip
-'''
+```
 
 选择版本，修改X即可
-'''
+
+```
 pip install "isaacsim[all,extscache]==5.X.0" --extra-index-url https://pypi.nvidia.com
-'''
+```
 
-打开网址安装与系统架构匹配CUDA的PyTorch
-https://pytorch.org/get-started/locally/
-'''
+[安装与系统架构匹配CUDA的PyTorch](https://pytorch.org/get-started/locally/)
+
+```
 pip3 install torch torchvision
-'''
+```
 
-打开并稳定运行一会儿,首次运行将提示用户接受NVIDIA Omniverse许可协议。要接受 EULA
-'''
+打开并稳定运行一会儿，首次运行将提示用户接受NVIDIA Omniverse许可协议，要接受EULA
+
+```
 isaacsim
-'''
+```
 
 ## 安装Isaac Lab
 

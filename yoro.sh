@@ -95,6 +95,7 @@ sudo apt install -y openscenegraph libopenscenegraph-dev
 sudo apt install -y openssl
 sudo apt install -y python3-pip
 sudo apt install -y python3-wstool python3-rosdep ninja-build stow
+sudo apt install -y npm
 sudo apt install -y screen
 sudo apt install -y tmux
 sudo apt install -y vlc

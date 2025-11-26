@@ -105,9 +105,9 @@ nvcc -V
 
 ## 安装cuDNN
 
-[查看适用当前CUDA的cuDNN版本]https://developer.nvidia.cn/rdp/cudnn-archive
+[查看适用当前CUDA的cuDNN版本](https://developer.nvidia.cn/rdp/cudnn-archive)
 
-[下载对应的cuDNN]https://developer.download.nvidia.cn/compute/cudnn/redist/cudnn/linux-x86_64/
+[下载对应的cuDNN](https://developer.download.nvidia.cn/compute/cudnn/redist/cudnn/linux-x86_64/)
 
 解压并安装
 

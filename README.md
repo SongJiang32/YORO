@@ -67,7 +67,7 @@ nvidia-smi
 
 [查看适用当前NVIDIA显卡驱动的CUDA版本](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
-下载对应的CUDA
+下载对应的CUDA,50系显卡只支持CUDA12.8
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run

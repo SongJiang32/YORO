@@ -121,10 +121,10 @@ sudo mv ./lib/* /usr/local/cuda/lib64/
 
 查看cuDNN库是否安装成功
 
-'''
+```
 cat /usr/local/cuda/include/cudnn
 cat /usr/local/cuda/include/cudnn_version.h
-'''
+```
 
 ## 安装Miniconda
 
@@ -151,13 +151,13 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 
 ## 安装Isaac Sim
 
-从Isaac Sim 4.0发布开始，可以使用pip安装Isaac Sim，推荐Ubuntu22.04及以上执行
-
-对于Isaac Sim 5.X，所需的Python版本为3.11
-
-对于Isaac Sim 4.X，所需的Python版本为3.10
-
-以下为安装Isaac Sim 5.X方法
+> 从Isaac Sim 4.0发布开始，可以使用pip安装Isaac Sim，推荐Ubuntu22.04及以上执行
+>
+> 对于Isaac Sim 5.X，所需的Python版本为3.11
+>
+> 对于Isaac Sim 4.X，所需的Python版本为3.10
+>
+> 以下为安装Isaac Sim 5.X方法
 
 ```
 conda create -n py311 python=3.11
